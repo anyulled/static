@@ -9,7 +9,7 @@ pipeline {
 		stage('Upload to AWS'){
             withAWS(region:'eu-west-3') {
                 s3Upload(file:'index.html', bucket:'udacity-jenkins-bucket', path:'index.html')
-        }
+            }
 		}
 	}
 }
