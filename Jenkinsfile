@@ -7,11 +7,9 @@ pipeline {
 	        }
 	    }
 		stage('Upload to AWS'){
-			steps {
-                withAWS(region:'eu-west-3') {
-                    s3Upload(file:'index.html', bucket:'udacity-jenkins-bucket', path:'index.html')
-                }
-			}
+            withAWS(region:'eu-west-3') {
+                s3Upload(file:'index.html', bucket:'udacity-jenkins-bucket', path:'index.html')
+        }
 		}
 	}
 }
